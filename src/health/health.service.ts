@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { DatabaseService } from '../database/database.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { HealthCheckDto } from './dto/health-check.dto';
 
 @Injectable()
 export class HealthService {
-  constructor(private readonly databaseService: DatabaseService) {}
+  constructor(private readonly databaseService: PrismaService) {}
 
   async check(): Promise<HealthCheckDto> {
     const startTime = Date.now();
